@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-semi = ["artigli",
+suits = ["artigli",
         "fiori",
         "occhi",
         "foglie"]
@@ -18,10 +18,10 @@ def rulers_init():
 
     rulers = {}
 
-    for seme in semi:
-        rulers[seme] = []
+    for suit in suits:
+        rulers[suit] = []
         for figura in figure:
-            rulers[seme].append(figura + " di " + seme.capitalize())
+            rulers[suit].append(figura + " di " + suit.capitalize())
 
 
 def main():
