@@ -7,7 +7,7 @@ suits = ["artigli",
         "occhi",
         "foglie"]
 
-figure = ["Fante",
+royal_titles = ["Fante",
           "Regina",
           "Re",
           "Principe",
@@ -22,8 +22,8 @@ def rulers_init():
 
     for suit in suits:
         rulers[suit] = []
-        for figura in figure:
-            rulers[suit].append(figura + " di " + suit.capitalize())
+        for title in royal_titles:
+            rulers[suit].append(title + " di " + suit.capitalize())
     return rulers
 
 
