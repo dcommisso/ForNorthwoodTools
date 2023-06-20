@@ -37,8 +37,8 @@ class RulersDeck:
             shuffle(self.undrawn_cards[suit])
 
     def __remove_card_from_deck(self, card):
-        suit_of_card_to_remove = card.split()[2].lower()
-        self.undrawn_cards[suit_of_card_to_remove].remove(card.lower())
+        suit_of_card_to_remove = card.split()[2]
+        self.undrawn_cards[suit_of_card_to_remove].remove(card)
 
     def draw_neutral_rulers(self):
         """Draw 8 neutral rulers, 2 per suit"""
@@ -56,9 +56,12 @@ class RulersDeck:
         has been specified
         """
 
+        # normalize card name
+        allies_to_draw = [ally.strip().lower() for ally in allies_to_draw]
+
         if allies_to_draw:
             for ally in allies_to_draw:
-                self.allies.append(ally.lower())
+                self.allies.append(ally)
                 self.__remove_card_from_deck(ally)
         else:
             self.__shuffle_by_suits()
