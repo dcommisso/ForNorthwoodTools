@@ -88,7 +88,10 @@ def main():
     args = parser.parse_args()
 
     deck = RulersDeck()
-    deck.draw_allies(args.allies.split(','))
+    if args.allies:
+        deck.draw_allies(args.allies.split(','))
+    else:
+        deck.draw_allies()
     deck.draw_neutral_rulers()
     deck.pretty_print_allies()
     deck.pretty_print_neutrals()
