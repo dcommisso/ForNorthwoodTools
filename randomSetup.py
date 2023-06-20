@@ -12,14 +12,6 @@ figure = ["Fante",
           "Marchesa",
           "Barone"]
 
-# rulers = {}
-#
-# for seme in semi:
-#     rulers[seme] = []
-#     for figura in figure:
-#         rulers[seme].append(figura + " di " + seme)
-#
-
 
 def rulers_init():
     """This function initialize the rulers array"""
@@ -30,7 +22,6 @@ def rulers_init():
         rulers[seme] = []
         for figura in figure:
             rulers[seme].append(figura + " di " + seme.capitalize())
-    print(rulers)
 
 
 def main():
