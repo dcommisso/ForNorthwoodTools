@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+from random import shuffle
+
 suits = ["artigli",
         "fiori",
         "occhi",
@@ -22,12 +24,28 @@ def rulers_init():
         rulers[suit] = []
         for figura in figure:
             rulers[suit].append(figura + " di " + suit.capitalize())
+    return rulers
+
+
+def random_setup(rulers):
+    """Return 4 random allies and 8 random neutral rulers"""
+
+    allies = []
+    neutrals = []
+    for suit in rulers.keys():
+        shuffle(rulers[suit])
+        allies.append(rulers[suit][0])
+        neutrals.append(rulers[suit][1])
+        neutrals.append(rulers[suit][2])
+    shuffle(neutrals)
+    return allies, neutrals
 
 
 def main():
     """Generate a random For Northwood! game setup"""
 
-    rulers_init()
+    rulers = rulers_init()
+    allies, neutrals = random_setup(rulers)
 
 
 if __name__ == "__main__":
