@@ -40,6 +40,8 @@ class RulersDeck:
         self.undrawn_cards[suit_of_card_to_remove].remove(card.lower())
 
     def draw_neutral_rulers(self):
+        """Draw 8 neutral rulers, 2 per suit"""
+
         self.__shuffle_by_suits()
         for suit in self.undrawn_cards:
             for _ in range(2):
