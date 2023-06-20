@@ -57,7 +57,8 @@ class RulersDeck:
         """
 
         # normalize card name
-        allies_to_draw = [ally.strip().lower() for ally in allies_to_draw]
+        if allies_to_draw:
+            allies_to_draw = [ally.strip().lower() for ally in allies_to_draw]
 
         if allies_to_draw:
             for ally in allies_to_draw:
