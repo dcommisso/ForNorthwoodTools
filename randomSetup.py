@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from random import shuffle
+import argparse
 
 
 class RulersDeck:
@@ -76,15 +77,22 @@ class RulersDeck:
             print(f'Feudo {fief:d} -> {ruler:s}'.title())
 
 
-# def main():
-#     """Generate a random For Northwood! game setup"""
-#
-#     rulers = rulers_init()
-#     allies, neutrals = random_setup(rulers)
-#     pretty_print_allies(allies)
-#     print("--------")
-#     pretty_print_neutrals(neutrals)
-#
-#
-# if __name__ == "__main__":
-#     main()
+def main():
+    """Generate a random For Northwood! game setup"""
+
+    parser = argparse.ArgumentParser(description='Random setup generator for\
+    "For Northwood!" game')
+
+    parser.add_argument('--allies', type=str,
+                        help='Allies to draw separated by comma')
+    args = parser.parse_args()
+
+    deck = RulersDeck()
+    deck.draw_allies(args.allies.split(','))
+    deck.draw_neutral_rulers()
+    deck.pretty_print_allies()
+    deck.pretty_print_neutrals()
+
+
+if __name__ == "__main__":
+    main()
