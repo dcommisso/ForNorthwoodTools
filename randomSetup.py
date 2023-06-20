@@ -41,11 +41,17 @@ def random_setup(rulers):
     return allies, neutrals
 
 
+def pretty_print_allies(allies):
+    """Print allies in human-readable format"""
+    print("I tuoi alleati sono: " + ', '.join(allies))
+
+
 def main():
     """Generate a random For Northwood! game setup"""
 
     rulers = rulers_init()
     allies, neutrals = random_setup(rulers)
+    pretty_print_allies(allies)
 
 
 if __name__ == "__main__":
