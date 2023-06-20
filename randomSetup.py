@@ -51,8 +51,10 @@ class RulersDeck:
         shuffle(self.neutrals)
 
     def draw_allies(self, allies_to_draw=None):
-        """Draw specified allies from the deck or 4 random allies if no card
-        has been specified"""
+        """
+        Draw specified allies from the deck or 4 random allies if no card
+        has been specified
+        """
 
         if allies_to_draw:
             for ally in allies_to_draw:
