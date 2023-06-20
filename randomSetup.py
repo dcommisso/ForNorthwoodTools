@@ -46,12 +46,22 @@ def pretty_print_allies(allies):
     print("I tuoi alleati sono: " + ', '.join(allies))
 
 
+def pretty_print_neutrals(neutrals):
+    """Print neutrals in human-readable format"""
+
+    print("I sovrani neutrali sono:\n")
+    for fief, ruler in enumerate(neutrals):
+        print(f'Feudo {fief:d} -> {ruler:s}')
+
+
 def main():
     """Generate a random For Northwood! game setup"""
 
     rulers = rulers_init()
     allies, neutrals = random_setup(rulers)
     pretty_print_allies(allies)
+    print("--------")
+    pretty_print_neutrals(neutrals)
 
 
 if __name__ == "__main__":
