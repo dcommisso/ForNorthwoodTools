@@ -100,6 +100,7 @@ def main():
         deck.draw_allies()
     deck.draw_neutral_rulers()
     deck.pretty_print_allies()
+    print("---------")
     deck.pretty_print_neutrals()
 
 
